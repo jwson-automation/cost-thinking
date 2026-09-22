@@ -1,0 +1,14 @@
+server/data/
+data/
+*.db
+.env
+.env.local
+node_modules/
+# サーバーに置く鍵（リポジトリには入れない）
+.env
+frontend/node_modules/
+frontend/.next/
+frontend/.vercel
+
+# ビルド成果物（16MB。リポジトリには入れない）
+server/server.exe

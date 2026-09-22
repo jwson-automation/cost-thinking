@@ -1,0 +1,17 @@
+services:
+  cost-thinking:
+    build: .
+    container_name: cost-thinking
+    restart: unless-stopped
+    ports:
+      - "8096:8096"
+    environment:
+      - PORT=8096
+      - DB_PATH=/app/data/board.db
+      # 鍵はリポジトリに置かない。サーバーの .env から渡す。
+      - ORCAROUTER_API_KEY=${ORCAROUTER_API_KEY:-}
+    volumes:
+      - cost-thinking-data:/app/data
+
+volumes:
+  cost-thinking-data:
